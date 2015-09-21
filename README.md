@@ -1,7 +1,12 @@
-# events
+# demoAngular
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.12.1.
+
+## Install
+- clone repository [https://github.com/janinatatiana/demoAngular.git](https://github.com/janinatatiana/demoAngular.git)
+- `npm install`
+- `bower install`
 
 ## Build & development
 
