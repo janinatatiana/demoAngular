@@ -12,13 +12,28 @@ angular.module('events.controllers')
   function aboutCtrl() {
     var aboutVm =  this;
 
-    aboutVm.information = {address: 'Jose A. Eguiguren', telephone: '072-578-546', cellphone: '0988194748'};
     aboutVm.add = add;
-
+    aboutVm.construirData = construirData;
+    init();
     return aboutVm;
 
-    function add() {
-      return null;
+    function add(data) {
+      console.log('ingreso');
+      aboutVm.info = data;
     }
 
+    function init() {
+      aboutVm.info = null;
+      aboutVm.information = {address: 'Jose A. Eguiguren', telephone: '072-578-546', cellphone: '0988194748'};
+    }
+
+    function getData() {
+      return {name: 'janina'};
+    }
+
+    function construirData () {
+      var data = getData ();
+      data.phone = '111';
+      return data;
+    }
   }

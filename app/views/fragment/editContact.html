@@ -1,17 +1,21 @@
-<h5>New contact</h5>
-<div class="form-group">
-  <input class="form-control" type="text" placeholder="Name" ng-model="contactsVm.contact.name">
-</div>
+<form name="contact">
+  <h5>New contact</h5>
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="Name" ng-model="contactsVm.contact.name">
+  </div>
 
-<div class="form-group">
-  <input class="form-control" type="text" placeholder="Address" ng-model="contactsVm.contact.address">
-</div>
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="Address" ng-model="contactsVm.contact.address">
+  </div>
 
-<div class="form-group">
-  <input class="form-control" type="text" placeholder="Cellphone" ng-model="contactsVm.contact.cellphone">
-</div>
+  <div class="form-group" ng-class="{'has-error': contact.phone.$error.invalidPhone}">
+    <input class="form-control" name="phone" type="text" placeholder="Cellphone" ng-model="contactsVm.contact.cellphone" phone-validation>
+    <p ng-show="contact.phone.$error.invalidPhone">Invalid number solo numeros</p>
+    <p ng-show="contact.phone.$error.invalidPhoneLength">Invalid number length</p>
+  </div>
 
-<div class="form-group">
-  <input class="form-control" type="text" placeholder="Phone" ng-model="contactsVm.contact.phone">
-</div>
-<button class="btn btn-success" type="button" ng-click="contactsVm.addContact()">Save</button>
+  <div class="form-group">
+    <input class="form-control" type="text" placeholder="Phone" ng-model="contactsVm.contact.phone">
+  </div>
+  <button class="btn btn-success" type="button" ng-click="contactsVm.addContact()">Save</button>
+</form>

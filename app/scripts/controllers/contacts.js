@@ -3,15 +3,17 @@
 angular.module('eventsApp')
   .controller('ContactsCtrl', contactsCtrl);
 
-function contactsCtrl () {
+function contactsCtrl (contactService) {
   var contactsVm = this;
 
   contactsVm.showForm = false;
   contactsVm.contact = {};
   contactsVm.contacts = [];
+  contactsVm.titles = ['Name', 'Address', 'Phone', 'Cellphone'];
   contactsVm.addContact = addContact;
   contactsVm.newContact = newContact;
 
+  getContacts();
   return contactsVm;
 
   function addContact() {
@@ -21,7 +23,10 @@ function contactsCtrl () {
   }
 
   function newContact() {
-    console.log('newContact');
     contactsVm.showForm = true;
+  }
+
+  function getContacts(){
+    contactsVm.contacts = contactService.getContacts();
   }
 }
