@@ -1,0 +1,17 @@
+<div class="col-md-6">
+  <input class="form-control" type="search" placeholder="search" ng-model="searchTerm">
+  <table class="table">
+    <thead>
+      <th ng-repeat="t in titles track by $index">{{t}}</th>
+    </thead>
+    <tr ng-repeat="c in objectList | orderBy:'-name' | filter:searchTerm">
+      <td>{{c.name}}</td>
+      <td>{{c.address}}</td>
+      <td>{{c.cellphone}}</td>
+      <td>{{c.phone | number: 3}}</td>
+      <td><a href="#/contacts/{{c.name}}">Details</a></td>
+    </tr>
+  </table>
+  <button class="btn btn-success" type="button" ng-click="newObject()">New contact</button>
+  <hr>
+</div>
