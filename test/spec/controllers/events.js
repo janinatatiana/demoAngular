@@ -5,16 +5,11 @@ describe('Controller: EventsCtrl', function () {
   // load the controller's module
   beforeEach(module('eventsApp'));
 
-  var EventsCtrl,
-    scope;
+  var EventsCtrl;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    EventsCtrl = $controller('EventsCtrl', {
-      $scope: scope
-      // place here mocked dependencies
-    });
+  beforeEach(inject(function ($controller) {
+    EventsCtrl = $controller('EventsCtrl');
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {

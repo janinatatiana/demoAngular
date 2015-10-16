@@ -10,7 +10,7 @@
 function eventsList() {
   var directive = {
     templateUrl: 'views/eventsList.html',
-    restrict: 'A',
+    restrict: 'EA',
     scope: {
       objectList: '=',
       newObject: '&',
@@ -24,8 +24,14 @@ function eventsList() {
 
   function eventsListController() {
     var elVm = this;
+
+    elVm.prueba = prueba;
+
     return elVm;
 
+    function prueba () {
+      return true;
+    }
   }
 }
 

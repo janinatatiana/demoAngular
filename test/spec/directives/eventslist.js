@@ -17,7 +17,7 @@ describe('Directive: eventsList', function () {
     ctrl = element.controller('eventsList');
   }));
 
-  it('should make hidden element visible', function () {
-
+  it('test', function () {
+    expect(ctrl.prueba()).toBe(true);
   });
 });

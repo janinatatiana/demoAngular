@@ -3,7 +3,7 @@
 angular.module('eventsApp')
   .controller('ContactsCtrl', contactsCtrl);
 
-function contactsCtrl (contactService) {
+function contactsCtrl ($rootScope, contactService) {
   var contactsVm = this;
 
   contactsVm.showForm = false;
@@ -28,5 +28,11 @@ function contactsCtrl (contactService) {
 
   function getContacts(){
     contactsVm.contacts = contactService.getContacts();
+    contactService.getUsers()
+      .then(function (data) {
+        console.log(data);
+      }, function (error) {
+        console.log(error);
+      });
   }
 }

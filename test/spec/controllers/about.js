@@ -36,6 +36,5 @@ describe('Controller: AboutCtrl', function () {
       var data = AboutCtrl.construirData();
       expect(data).toBeDefined();
     });
-  })
-
+  });
 });

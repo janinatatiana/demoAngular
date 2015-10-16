@@ -33,6 +33,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'mainVm'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'MainCtrl',
+        controllerAs: 'mainVm'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',

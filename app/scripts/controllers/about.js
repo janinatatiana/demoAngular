@@ -18,7 +18,6 @@ angular.module('events.controllers')
     return aboutVm;
 
     function add(data) {
-      console.log('ingreso');
       aboutVm.info = data;
     }
 
