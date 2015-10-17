@@ -3,7 +3,7 @@
     <div class="form-group" ng-class="{'has-error': loginForm.userName.$invalid && loginForm.userName.$touched }">
       <label for="userName">Username: </label>
       <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="addon1"  aria-hidden="true">Username</span>
+        <span class="input-group-addon" id="addon1"  aria-hidden="true"><i class="fa fa-user"></i></span>
         <input type="text" name="userName" class="form-control" placeholder="Username" aria-describedby="addon1" ng-model="mainVm.user.username" ng-required="true">
       </div>
       <span ng-show="loginForm.userName.$error.required && (loginForm.userName.$touched)" class="help-block">Username is required</span>
