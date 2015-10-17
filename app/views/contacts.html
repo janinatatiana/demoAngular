@@ -4,4 +4,13 @@
   <div class="col-md-6" ng-if="contactsVm.showForm">
     <div ng-include="'views/fragment/editContact.html'"></div>
   </div>
+  <div>
+    {{contactsVm.recibo.numeroAutorizacion}}
+  </div>
+    <div>
+    {{contactsVm.recibo.fecha}}
+  </div>
+  <div>
+    {{contactsVm.recibo.importeTotal}}
+  </div>
 </div>

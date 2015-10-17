@@ -26,11 +26,15 @@ function eventsList() {
     var elVm = this;
 
     elVm.prueba = prueba;
-
+    elVm.contact = contact;
     return elVm;
 
-    function prueba () {
+    function prueba() {
       return true;
+    }
+
+    function contact() {
+      return {name: 'janina'};
     }
   }
 }

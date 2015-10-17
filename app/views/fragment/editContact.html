@@ -2,6 +2,7 @@
   <h5>New contact</h5>
   <div class="form-group" ng-class="{'has-error': contact.name.$invalid && contact.name.$touched}">
     <input class="form-control" name="name" type="text" ng-required="true" placeholder="Name" ng-model="contactsVm.contact.name">
+    <p ng-show="contact.name.$invalid && contact.name.$touched">Campo obligatorio</p>
   </div>
 
   <div class="form-group">

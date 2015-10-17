@@ -10,6 +10,7 @@ describe('Controller: ContactsCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, _contactService_) {
     contactService = _contactService_;
+    //Definiendo espia
     spyOn(contactService, 'getContacts').andReturn([]);
 
     contactsCtrl = $controller('ContactsCtrl');
@@ -17,6 +18,7 @@ describe('Controller: ContactsCtrl', function () {
 
   it('should call contactService.getContacts', function () {
     expect(contactService.getContacts).toHaveBeenCalled();
+    expect(contactService.getContacts()).toEqual([]);
   });
 
   it('should add a contact', function () {

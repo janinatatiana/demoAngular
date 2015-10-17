@@ -3,7 +3,7 @@
 describe('Directive: eventsList', function () {
 
   // load the directive's module
-  beforeEach(module('eventsApp'));
+  beforeEach(module('events.directives'));
   beforeEach(module('views/eventsList.html'));
 
   var element, scope, ctrl;
@@ -20,4 +20,8 @@ describe('Directive: eventsList', function () {
   it('test', function () {
     expect(ctrl.prueba()).toBe(true);
   });
+
+  it('test 2', function () {
+    expect(ctrl.contact()).toEqual({name: 'janina'})
+  })
 });
