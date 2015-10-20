@@ -22,6 +22,6 @@ describe('Directive: eventsList', function () {
   });
 
   it('test 2', function () {
-    expect(ctrl.contact()).toEqual({name: 'janina'})
-  })
+    expect(ctrl.contact()).toEqual({name: 'janina'});
+  });
 });

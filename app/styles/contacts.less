@@ -1,0 +1,58 @@
+//Colores
+@color1: red;
+
+//media queries
+@screen-xs: 480px;
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+
+body {
+  padding: 0;
+}
+
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+.footer {
+  margin-bottom: 0;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  position: fixed !important;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  .header,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+}
+
+.label-info {
+  font-weight: bold;
+  background: white;
+}

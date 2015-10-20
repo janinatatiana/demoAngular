@@ -48,9 +48,9 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+      less: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+        tasks: ['less:server', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -178,6 +178,39 @@ module.exports = function (grunt) {
         }]
       }
     },
+    // Compiles LESS to CSS and generates necessary files if requested
+    less: {
+      options: {
+        paths: ['./bower_components'],
+      },
+      dist: {
+        options: {
+          cleancss: true,
+          report: 'gzip'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: '*.less',
+          dest: '.tmp/app/',
+          ext: '.css'
+        }]
+      },
+      server: {
+        options: {
+          sourceMap: true,
+          sourceMapBasepath: '<%= yeoman.app %>/',
+          sourceMapRootpath: '../'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: '*.less',
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      }
+    },
 
     // Automatically inject Bower components into the app
     wiredep: {
@@ -200,6 +233,10 @@ module.exports = function (grunt) {
               }
             }
           }
+      },
+      less: {
+        src: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+        ignorePath: /(\.\.\/){1,2}bower_components\//
       }
     },
 
@@ -387,13 +424,13 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'copy:styles'
+        'less:dist',
       ],
       test: [
-        'copy:styles'
+        'less:dist'
       ],
       dist: [
-        'copy:styles',
+        'less:dist',
         'imagemin',
         'svgmin'
       ]

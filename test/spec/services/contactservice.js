@@ -40,7 +40,7 @@ describe('Service: contactService', function () {
 
     contactService.getUsers()
     .then(function (data) {
-      expect(data).toEqual(data)
+      expect(data).toEqual(data);
     });
 
     $httpBackend.flush();
@@ -52,7 +52,7 @@ describe('Service: contactService', function () {
 
     contactService.getComments(1)
     .then(function (data) {
-      expect(data).toEqual(data)
+      expect(data).toEqual(data);
     });
 
     $httpBackend.flush();
