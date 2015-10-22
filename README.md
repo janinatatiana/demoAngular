@@ -15,3 +15,10 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+## Protractor tests
+
+- `./node_modules/protractor/bin/webdriver-manager update standalone`
+- `./node_modules/protractor/bin/webdriver-manager start`
+
+- `./node_modules/protractor/bin/protractor ./test/protractor.conf.js`

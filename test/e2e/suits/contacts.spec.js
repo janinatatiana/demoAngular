@@ -8,8 +8,7 @@ describe('Contacts', function() {
 
     it('should add a new contact',  function(){
       browser.get('#/contacts');
-      browser.waitForAngular();
-      contacts.addContact();
+      contacts.verifyMessages();
     });
   });
 });
