@@ -29,6 +29,7 @@ function phoneValidation() {
       if (viewValue.length === 7) {
           ctrl.$setValidity('invalidPhoneLength', true);
           return undefined;
+
       } else {
           ctrl.$setValidity('invalidPhoneLength', false);
           return viewValue;
