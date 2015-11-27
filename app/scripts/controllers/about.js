@@ -15,6 +15,8 @@ angular.module('events.controllers')
     aboutVm.add = add;
     aboutVm.construirData = construirData;
     init();
+
+
     return aboutVm;
 
     function add(data) {
